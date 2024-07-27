@@ -1,0 +1,36 @@
+<section class="tour-list">
+  <div class="container">
+    <div class="titles flex gap-2">
+      <h2 class="title text-accent">Горящие туры</h2>
+      <h2 class="title">Популярные туры</h2>
+    </div>
+  </div>
+  <div class="slider">
+    <div class="slider__wrapper">
+      <div class="slider__item">@@include('../components/tour-card.html')</div>
+      <div class="slider__item">@@include('../components/tour-card.html')</div>
+      <div class="slider__item">@@include('../components/tour-card.html')</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tour-list {
+    padding: 75px 0;
+    .title {
+      width: 225px;
+      height: 32px;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: bold;
+      font-family: "Arial";
+      color: #000000;
+    }
+    .text-accent {
+      color: #fbd341;
+    }
+    .slider {
+      margin-top: 75px;
+    }
+  }
+</style>

@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/pagedone@1.1.2/src/css/pagedone.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+  <div class="container">
+    <div class="header-wrapper">
+      <a href="" class="logo">
+        <img src="../../img/logo.svg" alt="logo" />
+      </a>
+
+      <nav>
+        <ul class="nav-contacts flex">
+          <li class="location hover-scale">
+            <a href="">
+              <span class="text-white">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  >
+                    <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0-6 0" />
+                    <path
+                      d="M12.794 21.322a2 2 0 0 1-2.207-.422l-4.244-4.243a8 8 0 1 1 13.59-4.616M16 19h6m-3-3v6"
+                    />
+                  </g></svg
+              ></span>
+
+              г. Харьков, ул. Мироносицкая 10а
+            </a>
+          </li>
+
+          <li class="phone hover-scale">
+            <a href="href=tell:+30979800000">
+              <span class="text-white">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"
+                  />
+                </svg>
+              </span>
+              +38 (099) 990-81-00 (viber, telegram)
+            </a>
+          </li>
+          <li class="socilal flex gap-3">
+            <a href="#" class="hover-scale">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"
+                />
+              </svg>
+            </a>
+            <a href="#" class="hover-scale"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  fill="currentColor"
+                  d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48m0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32m48-136H80a56.06 56.06 0 0 0-56 56v96a56.06 56.06 0 0 0 56 56h96a56.06 56.06 0 0 0 56-56V80a56.06 56.06 0 0 0-56-56m40 152a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40V80a40 40 0 0 1 40-40h96a40 40 0 0 1 40 40ZM192 76a12 12 0 1 1-12-12a12 12 0 0 1 12 12"
+                /></svg
+            ></a>
+          </li>
+        </ul>
+
+        <ul class="navigation-items flex">
+          <li class="dropdown-hover dropdown-item">
+            <div class="dropdown relative inline-flex group">
+              <a
+                id="dropdown-link"
+                class="dropdown-toggle hover-item inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
+              >
+                Главная
+              </a>
+            </div>
+          </li>
+
+          <li class="dropdown-hover dropdown-item">
+            <div class="dropdown relative inline-flex group">
+              <a
+                id="dropdown-link"
+                class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
+              >
+                Туры
+                <svg
+                  class="dropdown-open:rotate-180 w-3 h-3 text-black"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  ></path>
+                </svg>
+              </a>
+              <div
+                class="dropdown-menu shadow-lg absolute top-full w-72 hidden group-hover:block"
+                aria-labelledby="dropdown-hover"
+              >
+                <ul class="py-2">
+                  <li>
+                    <a
+                      class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                      href="javascript:;"
+                    >
+                      Горящие туры
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                      href="javascript:;"
+                    >
+                      Поиск тура
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                      href="javascript:;"
+                    >
+                      Туры по Украине
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                      href="javascript:;"
+                    >
+                      Экскурсионные туры
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                      href="javascript:;"
+                    >
+                      Week end туры
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li class="dropdown-hover dropdown-item">
+            <div class="dropdown relative inline-flex group">
+              <a
+                id="dropdown-link"
+                class="dropdown-toggle hover-item inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
+              >
+                Страны
+              </a>
+            </div>
+          </li>
+
+          <li class="dropdown-hover dropdown-item">
+            <div class="dropdown relative inline-flex group">
+              <a
+                id="dropdown-link"
+                class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
+              >
+                Услуги
+                <svg
+                  class="dropdown-open:rotate-180 w-3 h-3 text-black"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  ></path>
+                </svg>
+              </a>
+              <div
+                class="dropdown-menu shadow-lg absolute top-full w-72 hidden group-hover:block"
+                aria-labelledby="dropdown-hover dropdown-link"
+              >
+                <ul class="py-2">
+                  <li>
+                    <a
+                      class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                      href="javascript:;"
+                    >
+                      Авиабилеты
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                      href="javascript:;"
+                    >
+                      Визовая поддержка
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                      href="javascript:;"
+                    >
+                      Индивидуальный трансфер
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                      href="javascript:;"
+                    >
+                      Подарочные сертификаты
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                      href="javascript:;"
+                    >
+                      Бронирование отелей и апартаментов
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                      href="javascript:;"
+                    >
+                      Как забронировать и оплатить тур
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li class="dropdown-hover dropdown-item">
+            <div class="dropdown relative inline-flex group">
+              <a
+                id="dropdown-link"
+                class="dropdown-toggle hover-item inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
+              >
+                О компании
+              </a>
+            </div>
+          </li>
+
+          <li class="dropdown-hover dropdown-item">
+            <div class="dropdown relative inline-flex group">
+              <a
+                id="dropdown-link"
+                class="dropdown-toggle hover-item inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
+              >
+                Контакты
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    z-index: 99;
+    background: transparent;
+    width: 100%;
+    padding: 10px 0 0;
+
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+    .navigation-items {
+      justify-content: space-around;
+      gap: 50px;
+      border-radius: 10px;
+      background-color: #fbd341;
+      padding: 0 20px;
+      .dropdown-link {
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: bold;
+        font-family: "Arial";
+      }
+    }
+    .nav-contacts {
+      padding: 0 10px 0 50px;
+      gap: 50px;
+      a {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+    }
+    ul {
+      width: 100%;
+    }
+    .dropdown-menu {
+      filter: drop-shadow(-1.236px 3.804px 7.5px rgba(0, 0, 0, 0.34));
+      background-color: #3397e2;
+      opacity: 0.8;
+      width: 192px;
+      left: -100%;
+
+      li {
+        text-wrap: balance;
+      }
+    }
+  }
+  .nav-contacts {
+    opacity: 0.8;
+    width: 228px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #f3f3f3;
+    font-weight: bold;
+    font-family: "Arial";
+  }
+</style>
+
+
+    <main class="main">
+      <section class="banner-page">
+  <div class="banner-img"></div>
+  <div class="banner-content">
+    <div class="title-сontent">
+      <div class="container content-wrapper">
+        <h1 class="title">
+          Лучшие предложения по солнечному Египту из Харькова
+        </h1>
+        <a
+          type="button"
+          class="btn-banner hover-scale py-2.5 px-6 text-sm rounded-lg bg-gradient-to-r from-yellow-600 to-yellow-400 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gradient-to-l text-black-900"
+        >
+          Получить предложения
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .banner-page {
+    height: inherit;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    height: 100dvh;
+  }
+  .banner-img {
+    position: absolute;
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url(https://i.imgur.com/8bOY0bw.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 1300px;
+      left: 0;
+      top: 0px;
+    }
+  }
+  .title-сontent {
+    padding: 65px 20px 45px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: -20px;
+      top: 0;
+      opacity: 0.49;
+      width: 1352px;
+      height: 228px;
+      background-image: linear-gradient(
+        96deg,
+        rgba(1, 72, 128, 0.9999999999999999) 0%,
+        rgba(2, 73, 128, 0) 100%
+      );
+    }
+  }
+  .banner-content {
+    padding: 320px 0 185px;
+  }
+  .banner-page .title {
+    font-size: 30px;
+    line-height: 30px;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: "Arial";
+    position: relative;
+    z-index: 1;
+    padding-bottom: 40px;
+  }
+  .banner-page .btn-banner {
+    position: relative;
+    z-index: 1;
+  }
+</style>
+
+      <section class="tour-list">
+  <div class="container">
+    <div class="titles flex gap-2">
+      <h2 class="title text-accent">Горящие туры</h2>
+      <h2 class="title">Популярные туры</h2>
+    </div>
+  </div>
+  <div class="slider">
+    <div class="slider__wrapper">
+      <div class="slider__item"><div
+  id="tour-card"
+  class="relative flex flex-col items-center border border-solid border-gray-200 rounded-2xl transition-all duration-500 md:flex-row md:max-w-lg"
+>
+  <div class="block overflow-hidden md:w-52 h-48">
+    <figure>
+      <img
+        src="../../img/slider1.svg"
+        alt="Card image"
+        class="h-full rounded-2xl object-cover"
+      />
+    </figure>
+  </div>
+  <div class="p-4 card-content">
+    <div class="card-header">
+      <h4
+        class="text-base font-semibold text-black-900 transition-all duration-500"
+      >
+        8 марта в Cyrene Sharm hotel
+      </h4>
+      <p
+        class="text-sm font-normal text-gray-500 transition-all duration-500 leading-5"
+      >
+        (12.03.2018 — 19.03.2018)
+      </p>
+    </div>
+    <div class="card-description">
+      <p>Перелёт, питание по системе all inclusive, трансфер</p>
+    </div>
+
+    <div class="card-footer">
+      <div class="card-price">
+        <p
+          class="text-xl font-semibold text-black-900 transition-all duration-500 leading-5"
+        >
+          1 259 грн
+        </p>
+        <span
+          class="text-s font-normal text-gray-900 transition-all duration-500 leading-5"
+          >/за 1 человека</span
+        >
+      </div>
+      <a
+        type="button"
+        class="card-btn py-2.5 px-6 text-sm rounded-full bg-gradient-to-r from-yellow-400 to-yellow-200 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gradient-to-l"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+          <path
+            fill="currentColor"
+            d="M6.23 20.23L8 22l10-10L8 2L6.23 3.77L14.46 12z"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  #tour-card {
+    background-image: linear-gradient(
+      280deg,
+      rgba(204, 204, 204, 0.338) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  #tour-card figure {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  #tour-card img {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #tour-card .rounded-full {
+    border-radius: 50%;
+    padding: 15px;
+  }
+
+  #tour-card .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #tour-card .card-footer {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #tour-card .card-price {
+    display: flex;
+    gap: 5px;
+    position: relative;
+    span {
+      position: absolute;
+      right: -95%;
+      top: -10px;
+      font-size: 11px;
+      color: #8a8a8a;
+    }
+  }
+  #tour-card .card-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+</style>
+</div>
+      <div class="slider__item"><div
+  id="tour-card"
+  class="relative flex flex-col items-center border border-solid border-gray-200 rounded-2xl transition-all duration-500 md:flex-row md:max-w-lg"
+>
+  <div class="block overflow-hidden md:w-52 h-48">
+    <figure>
+      <img
+        src="../../img/slider1.svg"
+        alt="Card image"
+        class="h-full rounded-2xl object-cover"
+      />
+    </figure>
+  </div>
+  <div class="p-4 card-content">
+    <div class="card-header">
+      <h4
+        class="text-base font-semibold text-black-900 transition-all duration-500"
+      >
+        8 марта в Cyrene Sharm hotel
+      </h4>
+      <p
+        class="text-sm font-normal text-gray-500 transition-all duration-500 leading-5"
+      >
+        (12.03.2018 — 19.03.2018)
+      </p>
+    </div>
+    <div class="card-description">
+      <p>Перелёт, питание по системе all inclusive, трансфер</p>
+    </div>
+
+    <div class="card-footer">
+      <div class="card-price">
+        <p
+          class="text-xl font-semibold text-black-900 transition-all duration-500 leading-5"
+        >
+          1 259 грн
+        </p>
+        <span
+          class="text-s font-normal text-gray-900 transition-all duration-500 leading-5"
+          >/за 1 человека</span
+        >
+      </div>
+      <a
+        type="button"
+        class="card-btn py-2.5 px-6 text-sm rounded-full bg-gradient-to-r from-yellow-400 to-yellow-200 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gradient-to-l"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+          <path
+            fill="currentColor"
+            d="M6.23 20.23L8 22l10-10L8 2L6.23 3.77L14.46 12z"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  #tour-card {
+    background-image: linear-gradient(
+      280deg,
+      rgba(204, 204, 204, 0.338) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  #tour-card figure {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  #tour-card img {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #tour-card .rounded-full {
+    border-radius: 50%;
+    padding: 15px;
+  }
+
+  #tour-card .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #tour-card .card-footer {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #tour-card .card-price {
+    display: flex;
+    gap: 5px;
+    position: relative;
+    span {
+      position: absolute;
+      right: -95%;
+      top: -10px;
+      font-size: 11px;
+      color: #8a8a8a;
+    }
+  }
+  #tour-card .card-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+</style>
+</div>
+      <div class="slider__item"><div
+  id="tour-card"
+  class="relative flex flex-col items-center border border-solid border-gray-200 rounded-2xl transition-all duration-500 md:flex-row md:max-w-lg"
+>
+  <div class="block overflow-hidden md:w-52 h-48">
+    <figure>
+      <img
+        src="../../img/slider1.svg"
+        alt="Card image"
+        class="h-full rounded-2xl object-cover"
+      />
+    </figure>
+  </div>
+  <div class="p-4 card-content">
+    <div class="card-header">
+      <h4
+        class="text-base font-semibold text-black-900 transition-all duration-500"
+      >
+        8 марта в Cyrene Sharm hotel
+      </h4>
+      <p
+        class="text-sm font-normal text-gray-500 transition-all duration-500 leading-5"
+      >
+        (12.03.2018 — 19.03.2018)
+      </p>
+    </div>
+    <div class="card-description">
+      <p>Перелёт, питание по системе all inclusive, трансфер</p>
+    </div>
+
+    <div class="card-footer">
+      <div class="card-price">
+        <p
+          class="text-xl font-semibold text-black-900 transition-all duration-500 leading-5"
+        >
+          1 259 грн
+        </p>
+        <span
+          class="text-s font-normal text-gray-900 transition-all duration-500 leading-5"
+          >/за 1 человека</span
+        >
+      </div>
+      <a
+        type="button"
+        class="card-btn py-2.5 px-6 text-sm rounded-full bg-gradient-to-r from-yellow-400 to-yellow-200 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gradient-to-l"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+          <path
+            fill="currentColor"
+            d="M6.23 20.23L8 22l10-10L8 2L6.23 3.77L14.46 12z"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  #tour-card {
+    background-image: linear-gradient(
+      280deg,
+      rgba(204, 204, 204, 0.338) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  #tour-card figure {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  #tour-card img {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #tour-card .rounded-full {
+    border-radius: 50%;
+    padding: 15px;
+  }
+
+  #tour-card .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #tour-card .card-footer {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #tour-card .card-price {
+    display: flex;
+    gap: 5px;
+    position: relative;
+    span {
+      position: absolute;
+      right: -95%;
+      top: -10px;
+      font-size: 11px;
+      color: #8a8a8a;
+    }
+  }
+  #tour-card .card-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+</style>
+</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tour-list {
+    padding: 75px 0;
+    .title {
+      width: 225px;
+      height: 32px;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: bold;
+      font-family: "Arial";
+      color: #000000;
+    }
+    .text-accent {
+      color: #fbd341;
+    }
+    .slider {
+      margin-top: 75px;
+    }
+  }
+</style>
+
+      <section class="advantages">
+  <div class="container">
+    <h2 class="title">НАШИ ПРЕИМУЩЕСТВА</h2>
+    <div class="advantages-wrapper flex">
+      <figure>
+        <img src="../../img/advantages.svg" alt="" />
+      </figure>
+      <p class="advantages-text">
+        Очень долго подбирали разные варианты для того, чтобы отпраздновать свой
+        юбилейный День рождения в путешествии и не могли определиться... Решили
+        обратиться за помощью в турагенство. Гульнара, выслушав все пожелания,
+        предложила отдых в Турции, отель Justiniano Club Park Conti 5* в
+        Окурджалар возле Аланьи. Мы очень благодарны ей за предложенный
+        вариант!!!! Отдых получился отличный! Отель с большой ухоженной
+        территорией, внимательный обслуживающий персонал. Отличный номер с видом
+        на море.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .advantages {
+    background-image: linear-gradient(
+      263deg,
+      rgba(15, 37, 71, 0.501) 0%,
+      rgba(34, 51, 77, 0) 100%
+    );
+    padding: 45px 0 75px;
+
+    .advantages-wrapper {
+      gap: 100px;
+      align-items: center;
+    }
+    .advantages-text {
+      max-width: 550px;
+    }
+    .title {
+      font-size: 24px;
+      line-height: 30px;
+      color: #000000;
+      font-weight: bold;
+      font-family: "Arial";
+      padding-bottom: 30px;
+    }
+  }
+</style>
+
+      <section class="tour-offer">
+  <div class="container">
+    <h2 class="title">ХОЧУ ПРЕДЛОЖЕНИЕ ПО ТУРУ</h2>
+    <ul class="tour-offer-form">
+      <li class="hover-item dropdown-item">
+        <div class="dropdown relative inline-flex group">
+          <a
+            id="dropdown-link"
+            class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
+          >
+            Имя
+          </a>
+        </div>
+      </li>
+
+      <li class="hover-item dropdown-item">
+        <div class="dropdown relative inline-flex group">
+          <a
+            id="dropdown-link"
+            class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
+          >
+            Email
+          </a>
+        </div>
+      </li>
+
+      <li class="hover-item dropdown-item">
+        <div class="dropdown relative inline-flex group">
+          <a
+            id="dropdown-link"
+            class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
+          >
+            Телефон
+          </a>
+        </div>
+      </li>
+
+      <li class="hover-item dropdown-item">
+        <div class="dropdown relative inline-flex group">
+          <a
+            id="dropdown-link"
+            class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
+          >
+            Страна тура
+            <svg
+              class="dropdown-open:rotate-180 w-3 h-3 text-black"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              ></path>
+            </svg>
+          </a>
+          <div
+            class="dropdown-menu shadow-lg absolute top-full w-72 hidden group-hover:block"
+            aria-labelledby="dropdown-hover dropdown-link"
+          >
+            <ul class="py-2">
+              <li>
+                <a
+                  class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                  href="javascript:;"
+                >
+                  Турция
+                </a>
+              </li>
+              <li>
+                <a
+                  class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                  href="javascript:;"
+                >
+                  Египет
+                </a>
+              </li>
+              <li>
+                <a
+                  class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                  href="javascript:;"
+                >
+                </a>
+              </li>
+              <li>
+                <a
+                  class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                  href="javascript:;"
+                >
+                  Подарочные сертификаты
+                </a>
+              </li>
+              <li>
+                <a
+                  class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                  href="javascript:;"
+                >
+                  Бронирование отелей и апартаментов
+                </a>
+              </li>
+              <li>
+                <a
+                  class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                  href="javascript:;"
+                >
+                  Как забронировать и оплатить тур
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="dropdown-item">
+        <a
+          type="button"
+          class="hover-scale btn-banner py-2.5 px-6 text-sm rounded-lg bg-gradient-to-r from-yellow-600 to-yellow-400 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gradient-to-l text-black-900"
+        >
+          Получить предложения
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .tour-offer {
+    position: relative;
+    .title {
+      font-size: 24px;
+      line-height: 30px;
+      color: #ffffff;
+      font-weight: bold;
+      font-family: "Arial";
+      position: relative;
+      z-index: 1;
+      top: 25px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 830px;
+      bottom: 0;
+      background-image: url(../../img/footer-bh.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .tour-offer-form {
+      margin: 50px 0 40px 0px;
+      opacity: 0.6;
+      background-color: #000000;
+      border-radius: 10px;
+    }
+    a {
+      font-size: 18px;
+      line-height: 30px;
+      color: #e5e5e5;
+      font-family: "Arial";
+      font-weight: 400;
+      padding: 0;
+    }
+    .tour-offer-form {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+      align-items: center;
+    }
+    .btn-banner {
+      padding: 5px 10px;
+      font-size: 18px;
+      line-height: 30px;
+      color: #000000;
+      font-family: "Arial";
+    }
+    .hover-item {
+      color: #000000;
+      transition: 0.3s ease-in-out;
+      scale: 1;
+      &::after {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        /* top: -2px; */
+        width: 150%;
+        height: 120%;
+        transition: 0.3s ease;
+      }
+    }
+    .hover-item:hover {
+      a {
+        color: #000000;
+      }
+    }
+    .hover-item:active {
+      scale: 0.9;
+      transition: 0.3s ease-in-out;
+      &::after {
+      }
+    }
+  }
+</style>
+
+    </main>
+
+    <footer class="footer"></footer>
+<style>
+  .footer {
+    background-color: #060a56;
+    padding: 75px 0;
+  }
+</style>
+
+    <!--?  ***********CDN***********  -->
+    <script src="https://cdn.jsdelivr.net/npm/pagedone@1.1.2/src/js/pagedone.js"></script>
+    <!--?  ***********ROOT***********  -->
+    <script src="./js/index.bundle.js"></script>
+  </body>
+</html>

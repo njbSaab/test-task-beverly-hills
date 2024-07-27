@@ -1,0 +1,17 @@
+gulp clean - delete folder dist
+gulp - start proj
+
+
+npm cache clean --force
+rm -rf node_modules
+npm install
+
+# Find the process using port 35729
+lsof -i :35729
+
+# The output will show the PID of the process using the port, which you can kill
+kill -9 <PID>
+
+
+packeges
+npm i gulp gulp-sass sass gulp-file-include gulp-clean gulp-server-livereload gulp-sourcemaps gulp-plumber gulp-notify gulp-group-css-media-queries --save-dev

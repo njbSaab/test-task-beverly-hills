@@ -1,0 +1,290 @@
+@use "sass:math";
+
+:root {
+  --nj-black-h: 0;    // Черный цвет в HSL не имеет оттенка
+  --nj-black-s: 0%;   // Насыщенность черного равна 0%
+  --nj-black-l: 0%;   // Яркость черного также равна 0%
+  --nj-black-a: 1;    // Полная непрозрачность
+}
+
+// Функция для получения значений вьюпортных единиц (vw) на основе пикселей
+@function get-vw($px) {
+  $vw-context: ($layout-width * 0.01) * 1px; // Контекст вьюпортных единиц
+  @return math.div($px, $vw-context) * 1vw;
+}
+
+// Функция для получения значений вьюпортных единиц (vw) на основе пикселей с учетом ширины макета
+@function get-vw-by-layout($px, $layout: $layout-width) {
+  $vw-context: ($layout * 0.01) * 1px; // Контекст вьюпортных единиц
+  @return math.div($px, $vw-context) * 1vw;
+}
+
+//переводит шрифт из пикселей в адаптивный шрифт
+@mixin resp-font-size(
+  $target-size,
+  $max-font-size: null,
+  $base-font-size: 16,
+  $viewport-width: 1440
+) {
+  // Вычисление коэффициента для vw с использованием math.div()
+  $vw-coefficient: math.div($target-size * 100, $viewport-width);
+  // Вычисление rem части с использованием math.div()
+  $rem-part: math.div(
+    $target-size - ($vw-coefficient * $viewport-width * 0.01),
+    $base-font-size
+  );
+  // Установка максимального размера шрифта, если он не предоставлен
+  $max-size: if($max-font-size, $max-font-size, $target-size);
+  // Вычисление максимального размера шрифта в rem
+  $max-font-size-rem: math.div($max-size, $base-font-size);
+
+  font-size: clamp(
+    #{$rem-part}rem,
+    calc(#{$rem-part}rem + #{$vw-coefficient}vw),
+    #{$max-font-size-rem}rem
+  );
+}
+
+// Функция для конвертации пикселей в %
+@function resp($px, $base-width: 1440) {
+  $percentage: math.div($px, $base-width) * 100%;
+  @return calc(#{$percentage}); // Вычисление процента от базовой ширины
+}
+
+// Функция для конвертации пикселей в ремы
+@function rem($px) {
+  // Проверка, является ли значение числом с единицей измерения "px"
+  @if type-of($px) == "number" and unit($px) == "px" {
+    // Удаление единицы измерения и преобразование в ремы
+    @return math.div($px, 16px) * 1rem;
+  } @else if type-of($px) == "number" {
+    // Преобразование числового значения без единиц измерения в ремы
+    @return math.div($px, 16) * 1rem;
+  } @else {
+    // Возвращение исходного значения, если оно не является числом
+    @return $px;
+  }
+}
+
+// Функция для проверки, является ли значение пикселями
+@function is-pixels($value) {
+  @return type-of($value) == "number" and index("px", unit($value)) != null;
+}
+
+// Миксин для установки межбуквенного интервала с использованием em единиц измерения
+@mixin letter-space($spacing) {
+  letter-spacing: math.div($spacing, 1000) * 1em;
+}
+
+// Вспомогательный миксин для установки стилей текста (размер шрифта, высота строки и межбуквенный интервал) в ремах
+@mixin font-size($fontSize, $lineHeight: 0) {
+  font-size: math.div($fontSize, 16) * 1rem;
+  @if ($lineHeight != 0) {
+    line-height: math.div($lineHeight, $fontSize);
+  }
+}
+
+// Миксин для определения собственных шрифтовых семейств и подключения соответствующих файлов шрифтов
+@mixin font-face($font-family, $file-path, $weight: 400, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    src: url("#{$file-path}.eot");
+    src:
+      url("#{$file-path}.eot?#iefix") format("embedded-opentype"),
+      url("#{$file-path}.woff") format("woff"),
+      url("#{$file-path}.ttf") format("truetype");
+    font-weight: $weight;
+    font-style: unquote($style);
+    font-display: swap;
+    font-stretch: normal;
+  }
+}
+
+// Миксины для создания медиа-запросов
+
+// Минимальная ширина экрана
+@mixin mediaMin($media) {
+  @media (min-width: #{$media}) {
+    @content;
+  }
+}
+
+// Максимальная ширина экрана
+@mixin mediaMax($media) {
+  @media (max-width: #{$media}) {
+    @content;
+  }
+}
+
+// Диапазон ширины экрана от минимальной до максимальной
+@mixin mediaMinMax($min, $max) {
+  @media (min-width: #{$min}) and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+// Миксин для стилизации плейсхолдера в текстовых полях
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+// Миксин для настройки стилей полосы прокрутки в веб-приложениях
+@mixin scrollbar($size: 10px, $use: $scrollbar-color) {
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    cursor: pointer;
+  }
+  &::-webkit-scrollbar-track {
+    cursor: pointer;
+    background: rgba($use, 0.3);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba($use, 0.8);
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba($use, 1);
+  }
+}
+
+// Миксин для настройки стилей полосы прокрутки с возможностью выбора цвета и закругления углов
+@mixin scrollbar-variable($size: 10px, $use: "base", $rounded: false) {
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    cursor: pointer;
+  }
+  &::-webkit-scrollbar-track {
+    cursor: pointer;
+    background: color($use, $a: -0.7);
+    @if $rounded {
+      border-radius: $size * 2;
+    }
+  }
+  &::-webkit-scrollbar-thumb {
+    background: color($use, $a: -0.2);
+    @if $rounded {
+      border-radius: $size * 2;
+    }
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: color($use);
+  }
+}
+
+// Миксин для скрытия полосы прокрутки в веб-приложениях
+@mixin scrollbar-hide() {
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+// Миксин для создания переходов с поддержкой нескольких свойств, длительности и функции плавности
+@mixin transition($prop, $time: 150ms, $easing: ease-in) {
+  $transition: ();
+  @for $i from 1 through length($prop) {
+    @for $j from 0 to (length($prop)) - (length($time)) {
+      $time: join($time, nth($time, -1));
+    }
+    @for $j from 0 to (length($prop)) - (length($easing)) {
+      $easing: join($easing, nth($easing, -1));
+    }
+    $transition: append(
+      $transition,
+      (nth($prop, $i) nth($time, $i) nth($easing, $i)),
+      comma
+    );
+  }
+  transition: $transition;
+
+  $separated: ();
+  @if length($prop) > 1 {
+    @for $i from 1 through length($prop) {
+      $separated: append($separated, nth($prop, $i), comma);
+    }
+    will-change: $separated;
+  } @else if length($prop) == 1 {
+    @if $prop != "all" {
+      will-change: $prop;
+    }
+  }
+}
+
+// Миксин для создания блока с фиксированным соотношением сторон (например, для изображений)
+@mixin aspect-ratio($width, $height, $element: iframe) {
+  width: 100%;
+  position: relative;
+  &:after {
+    display: flex;
+    content: "";
+    width: 100%;
+    padding-top: math.div($height, $width) * 100%;
+  }
+  > #{$element} {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    @if ($element == "video" or $element == "iframe") {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+// Миксин для определения пользовательских цветов в формате HSLA
+@mixin define-color($name, $hex) {
+  :root {
+    --nj-#{$name}-h: #{hue($hex)};
+    --nj-#{$name}-s: #{saturation($hex)};
+    --nj-#{$name}-l: #{lightness($hex)};
+    --nj-#{$name}-a: #{alpha($hex)};
+  }
+}
+
+@mixin define-gradient($name, $gradient) {
+  :root {
+    --#{$name}-gradient: #{$gradient};
+  }
+}
+// Функция для использования пользовательских цветов в формате HSLA с возможностью настройки оттенка, насыщенности, светлоты и прозрачности
+@function use-color($name, $l: 0%, $s: 0%, $a: 0) {
+  @return hsla(
+    var(--nj-#{$name}-h),
+    calc(var(--nj-#{$name}-s) + #{$s}),
+    calc(var(--nj-#{$name}-l) + #{$l}),
+    calc(var(--nj-#{$name}-a) + #{$a})
+  );
+}
+
+// Миксин для центрирования элементов с использованием flexbox с возможностью задать отступ и расстояние между элементами
+@mixin flex-center-gap-pad($gap: 0, $padding: 0) {
+  display: flex;
+  gap: $gap;
+  padding: px-to-rem($padding);
+  align-items: center;
+  justify-content: center;
+}
+
+// Миксин для установки жирности шрифта
+@mixin fw($size: 0) {
+  font-weight: $size;
+}

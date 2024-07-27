@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/pagedone@1.1.2/src/css/pagedone.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    @@include('html/components/header.html')
+
+    <main class="main">
+      @@include('html/pages/banner-page.html')
+      @@include('html/pages/tours-list.html')
+      @@include('html/pages/advantages.html')
+      @@include('html/pages/tour-offer.html')
+    </main>
+
+    @@include('html/components/footer.html')
+    <!--?  ***********CDN***********  -->
+    <script src="https://cdn.jsdelivr.net/npm/pagedone@1.1.2/src/js/pagedone.js"></script>
+    <!--?  ***********ROOT***********  -->
+    <script src="./js/index.bundle.js"></script>
+  </body>
+</html>
