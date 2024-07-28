@@ -5,13 +5,28 @@
       <h2 class="title">Популярные туры</h2>
     </div>
   </div>
-  <div class="slider">
-    <div class="slider__wrapper">
-      <div class="slider__item">@@include('../components/tour-card.html')</div>
-      <div class="slider__item">@@include('../components/tour-card.html')</div>
-      <div class="slider__item">@@include('../components/tour-card.html')</div>
+
+  <section class="splide" aria-labelledby="carousel-heading">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <div class="slider__item">
+            @@include('../components/tour-card.html')
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="slider__item">
+            @@include('../components/tour-card.html')
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="slider__item">
+            @@include('../components/tour-card.html')
+          </div>
+        </li>
+      </ul>
     </div>
-  </div>
+  </section>
 </section>
 
 <style>
@@ -34,3 +49,17 @@
     }
   }
 </style>
+
+<script>
+  const splide = new Splide(".splide", {
+    type: "loop",
+    drag: "free",
+    focus: "center",
+    perPage: 3,
+    autoScroll: {
+      speed: 1,
+    },
+  });
+
+  splide.mount();
+</script>

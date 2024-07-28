@@ -9,6 +9,16 @@
     <link
       href="https://cdn.jsdelivr.net/npm/pagedone@1.1.2/src/css/pagedone.css"
     />
+    <link
+      href="
+      https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+      "
+      rel="stylesheet"
+    />
+    <script src="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+    "></script>
+
     <title>Document</title>
   </head>
   <body>
@@ -459,9 +469,13 @@
       <h2 class="title">Популярные туры</h2>
     </div>
   </div>
-  <div class="slider">
-    <div class="slider__wrapper">
-      <div class="slider__item"><div
+
+  <section class="splide" aria-labelledby="carousel-heading">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <div class="slider__item">
+            <div
   id="tour-card"
   class="relative flex flex-col items-center border border-solid border-gray-200 rounded-2xl transition-all duration-500 md:flex-row md:max-w-lg"
 >
@@ -507,10 +521,15 @@
         type="button"
         class="card-btn py-2.5 px-6 text-sm rounded-full bg-gradient-to-r from-yellow-400 to-yellow-200 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gradient-to-l"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+          viewBox="0 0 24 24"
+        >
           <path
             fill="currentColor"
-            d="M6.23 20.23L8 22l10-10L8 2L6.23 3.77L14.46 12z"
+            d="m8.006 21.308l-1.064-1.064L15.187 12L6.942 3.756l1.064-1.064L17.314 12z"
           />
         </svg>
       </a>
@@ -573,8 +592,12 @@
     height: 22px;
   }
 </style>
-</div>
-      <div class="slider__item"><div
+
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="slider__item">
+            <div
   id="tour-card"
   class="relative flex flex-col items-center border border-solid border-gray-200 rounded-2xl transition-all duration-500 md:flex-row md:max-w-lg"
 >
@@ -620,10 +643,15 @@
         type="button"
         class="card-btn py-2.5 px-6 text-sm rounded-full bg-gradient-to-r from-yellow-400 to-yellow-200 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gradient-to-l"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+          viewBox="0 0 24 24"
+        >
           <path
             fill="currentColor"
-            d="M6.23 20.23L8 22l10-10L8 2L6.23 3.77L14.46 12z"
+            d="m8.006 21.308l-1.064-1.064L15.187 12L6.942 3.756l1.064-1.064L17.314 12z"
           />
         </svg>
       </a>
@@ -686,8 +714,12 @@
     height: 22px;
   }
 </style>
-</div>
-      <div class="slider__item"><div
+
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="slider__item">
+            <div
   id="tour-card"
   class="relative flex flex-col items-center border border-solid border-gray-200 rounded-2xl transition-all duration-500 md:flex-row md:max-w-lg"
 >
@@ -733,10 +765,15 @@
         type="button"
         class="card-btn py-2.5 px-6 text-sm rounded-full bg-gradient-to-r from-yellow-400 to-yellow-200 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gradient-to-l"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+          viewBox="0 0 24 24"
+        >
           <path
             fill="currentColor"
-            d="M6.23 20.23L8 22l10-10L8 2L6.23 3.77L14.46 12z"
+            d="m8.006 21.308l-1.064-1.064L15.187 12L6.942 3.756l1.064-1.064L17.314 12z"
           />
         </svg>
       </a>
@@ -799,9 +836,12 @@
     height: 22px;
   }
 </style>
-</div>
+
+          </div>
+        </li>
+      </ul>
     </div>
-  </div>
+  </section>
 </section>
 
 <style>
@@ -824,6 +864,20 @@
     }
   }
 </style>
+
+<script>
+  const splide = new Splide(".splide", {
+    type: "loop",
+    drag: "free",
+    focus: "center",
+    perPage: 3,
+    autoScroll: {
+      speed: 1,
+    },
+  });
+
+  splide.mount();
+</script>
 
       <section class="advantages">
   <div class="container">
@@ -873,132 +927,274 @@
   }
 </style>
 
-      <section class="tour-offer">
-  <div class="container">
-    <h2 class="title">ХОЧУ ПРЕДЛОЖЕНИЕ ПО ТУРУ</h2>
-    <ul class="tour-offer-form">
-      <li class="hover-item dropdown-item">
-        <div class="dropdown relative inline-flex group">
-          <a
-            id="dropdown-link"
-            class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
-          >
-            Имя
-          </a>
-        </div>
-      </li>
+    </main>
 
-      <li class="hover-item dropdown-item">
-        <div class="dropdown relative inline-flex group">
-          <a
-            id="dropdown-link"
-            class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
-          >
-            Email
-          </a>
-        </div>
-      </li>
+    <footer class="footer">
+  <div class="footer-offer"><section class="tour-offer">
+  <div class="bg-wrapper">
+    <div class="container">
+      <h2 class="title">ХОЧУ ПРЕДЛОЖЕНИЕ ПО ТУРУ</h2>
 
-      <li class="hover-item dropdown-item">
-        <div class="dropdown relative inline-flex group">
-          <a
-            id="dropdown-link"
-            class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
-          >
-            Телефон
-          </a>
-        </div>
-      </li>
-
-      <li class="hover-item dropdown-item">
-        <div class="dropdown relative inline-flex group">
-          <a
-            id="dropdown-link"
-            class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
-          >
-            Страна тура
-            <svg
-              class="dropdown-open:rotate-180 w-3 h-3 text-black"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+      <ul class="tour-offer-form">
+        <li class="hover-item dropdown-item">
+          <div class="dropdown relative inline-flex group">
+            <a
+              id="dropdown-link"
+              class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
             >
-              <path
-                d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </a>
-          <div
-            class="dropdown-menu shadow-lg absolute top-full w-72 hidden group-hover:block"
-            aria-labelledby="dropdown-hover dropdown-link"
-          >
-            <ul class="py-2">
-              <li>
-                <a
-                  class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
-                  href="javascript:;"
-                >
-                  Турция
-                </a>
-              </li>
-              <li>
-                <a
-                  class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
-                  href="javascript:;"
-                >
-                  Египет
-                </a>
-              </li>
-              <li>
-                <a
-                  class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
-                  href="javascript:;"
-                >
-                </a>
-              </li>
-              <li>
-                <a
-                  class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
-                  href="javascript:;"
-                >
-                  Подарочные сертификаты
-                </a>
-              </li>
-              <li>
-                <a
-                  class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
-                  href="javascript:;"
-                >
-                  Бронирование отелей и апартаментов
-                </a>
-              </li>
-              <li>
-                <a
-                  class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
-                  href="javascript:;"
-                >
-                  Как забронировать и оплатить тур
-                </a>
-              </li>
-            </ul>
+              Имя
+            </a>
           </div>
-        </div>
-      </li>
+        </li>
 
-      <li class="dropdown-item">
-        <a
-          type="button"
-          class="hover-scale btn-banner py-2.5 px-6 text-sm rounded-lg bg-gradient-to-r from-yellow-600 to-yellow-400 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gradient-to-l text-black-900"
-        >
-          Получить предложения
-        </a>
-      </li>
-    </ul>
+        <li class="hover-item dropdown-item">
+          <div class="dropdown relative inline-flex group">
+            <a
+              id="dropdown-link"
+              class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
+            >
+              Email
+            </a>
+          </div>
+        </li>
+
+        <li class="hover-item dropdown-item">
+          <div class="dropdown relative inline-flex group">
+            <a
+              id="dropdown-link"
+              class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
+            >
+              Телефон
+            </a>
+          </div>
+        </li>
+
+        <li class="hover-item dropdown-item">
+          <div class="dropdown relative inline-flex group">
+            <a
+              id="dropdown-link"
+              class="dropdown-toggle inline-flex justify-center items-center gap-2 py-3 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500"
+            >
+              Страна тура
+              <svg
+                class="dropdown-open:rotate-180 w-3 h-3 text-black"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </a>
+            <div
+              class="dropdown-menu shadow-lg absolute top-full w-72 hidden group-hover:block"
+              aria-labelledby="dropdown-hover dropdown-link"
+            >
+              <ul class="py-2">
+                <li>
+                  <a
+                    class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                    href="javascript:;"
+                  >
+                    Турция
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                    href="javascript:;"
+                  >
+                    Египет
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                    href="javascript:;"
+                  >
+                    Подарочные сертификаты
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                    href="javascript:;"
+                  >
+                    Бронирование отелей и апартаментов
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="block px-6 py-2 hover:bg-yellow-300 text-white hover:text-black font-small"
+                    href="javascript:;"
+                  >
+                    Как забронировать и оплатить тур
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="dropdown-item">
+          <a
+            type="button"
+            class="hover-scale btn-banner py-2.5 px-6 text-sm rounded-lg bg-gradient-to-r from-yellow-600 to-yellow-400 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gradient-to-l text-black-900"
+          >
+            Получить предложения
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-wrapper">
+          <div class="footer-logo-content">
+            <div class="footer-logo-group">
+              <a href="" class="logo">
+                <img src="../../img/footer-logo.svg" alt="logo" />
+              </a>
+              <div class="footer-logo-group-text">
+                <h5>кураж тур</h5>
+                <p>мир вокруг тебя стоит только захотеть</p>
+              </div>
+            </div>
+
+            <div class="footer-logo-text">
+              Кураж тур агенство,которое предоставляет услуги по поиску,
+              оформлению и подбору туров для вас и ваших родных.
+            </div>
+          </div>
+
+          <nav>
+            <div class="footer-nav-col">
+              <h6 class="footer-col-title">Навигация</h6>
+              <ul class="navigation-items flex">
+                <li class="dropdown-hover dropdown-item hover-scale">
+                  <a class="footer-hover" style="padding: 8px 0"> Главная </a>
+                </li>
+
+                <li class="dropdown-hover dropdown-item hover-scale">
+                  <a class="footer-hover" style="padding: 8px 0"> Туры </a>
+                </li>
+
+                <li class="dropdown-hover dropdown-item hover-scale">
+                  <a class="footer-hover" style="padding: 8px 0"> Страны </a>
+                </li>
+
+                <li class="dropdown-hover dropdown-item">
+                  <a class="footer-hover" style="padding: 8px 0"> Услуги </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-support-col">
+              <h6 class="footer-col-title">Поддержка</h6>
+              <ul class="nav-contacts flex">
+                <li class="location hover-scale">
+                  <a href="" class="footer-hover"> FAQ </a>
+                </li>
+                <li class="phone hover-scale">
+                  <a class="footer-hover" href="href=tell:+30979800000">
+                    Blog
+                  </a>
+                </li>
+                <li class="socilal flex gap-3 hover-scale">
+                  <a href="#" class="footer-hover"> Feedback </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-contact-col">
+              <h6 class="footer-col-title">Контакты</h6>
+              <ul class="nav-contacts flex">
+                <li class="location hover-scale">
+                  <a href="">
+                    <span class="text-white footer-hover">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                      >
+                        <g
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                        >
+                          <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0-6 0" />
+                          <path
+                            d="M12.794 21.322a2 2 0 0 1-2.207-.422l-4.244-4.243a8 8 0 1 1 13.59-4.616M16 19h6m-3-3v6"
+                          />
+                        </g></svg
+                    ></span>
+
+                    г. Харьков, ул. Мироносицкая 10а
+                  </a>
+                </li>
+                <li class="phone hover-scale">
+                  <a href="href=tell:+30979800000">
+                    <span class="text-white footer-hover">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"
+                        />
+                      </svg>
+                    </span>
+                    +38 (099) 990-81-00 (viber, telegram)
+                  </a>
+                </li>
+                <li class="socilal flex gap-3">
+                  <a
+                    href="#"
+                    class="hover-scale footer-hover"
+                    style="margin-right: 10px"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"
+                      />
+                    </svg>
+                  </a>
+                  <a href="#" class="hover-scale footer-hover"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48m0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32m48-136H80a56.06 56.06 0 0 0-56 56v96a56.06 56.06 0 0 0 56 56h96a56.06 56.06 0 0 0 56-56V80a56.06 56.06 0 0 0-56-56m40 152a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40V80a40 40 0 0 1 40-40h96a40 40 0 0 1 40 40ZM192 76a12 12 0 1 1-12-12a12 12 0 0 1 12 12"
+                      /></svg
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1015,21 +1211,24 @@
       z-index: 1;
       top: 25px;
     }
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 830px;
-      bottom: 0;
-      background-image: url(../../img/footer-bh.svg);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
     .tour-offer-form {
       margin: 50px 0 40px 0px;
       opacity: 0.6;
       background-color: #000000;
       border-radius: 10px;
+    }
+    .bg-wrapper {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 830px;
+        bottom: 50%;
+        background-image: url(../../img/footer-bh.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     }
     a {
       font-size: 18px;
@@ -1044,6 +1243,8 @@
       justify-content: space-between;
       padding: 40px;
       align-items: center;
+      position: relative;
+      z-index: 11;
     }
     .btn-banner {
       padding: 5px 10px;
@@ -1077,16 +1278,112 @@
       &::after {
       }
     }
+    .shadow-lg {
+      background: #e5e5e5;
+      margin: 0 -30px;
+      border-radius: 10px;
+      ul li a {
+        padding: 5px 30px;
+        line-height: 20px;
+      }
+    }
+    .footer-bottom {
+      position: relative;
+      z-index: 1;
+      .footer-bottom-wrapper {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        width: 100%;
+        gap: 150px;
+      }
+
+      .footer-logo-text {
+        font-size: 14px;
+        line-height: 24px;
+        color: #ffffff;
+        font-family: "Arial";
+      }
+
+      .logo {
+        position: relative;
+        left: -20%;
+      }
+      .footer-logo-group-text {
+        color: #ffffff;
+        position: relative;
+        left: -30%;
+        padding-top: 30px;
+      }
+      .footer-logo-content div {
+        padding: 15px 0;
+      }
+      h5 {
+        font-size: 23px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 10px;
+        text-align: center;
+        text-wrap: balance;
+        line-height: 10px;
+      }
+      .footer-logo-group {
+        display: flex;
+      }
+      img {
+        height: 100%;
+      }
+      nav {
+        padding-top: 30px;
+        h6 {
+          font-size: 18px;
+          line-height: 24px;
+          color: #ffffff;
+          font-weight: bold;
+          font-family: "Arial";
+          padding-bottom: 30px;
+        }
+        a {
+          font-size: 14px;
+          line-height: 30px;
+          color: #ffffff;
+          font-family: "Arial";
+        }
+        div {
+          width: 100%;
+        }
+        display: flex;
+        .footer-nav-col,
+        .navigation-items,
+        .nav-contacts {
+          display: flex;
+          flex-direction: column;
+        }
+        li {
+          width: fit-content;
+          padding: 7.5px 0;
+        }
+        .nav-contacts a {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          text-wrap: nowrap;
+        }
+      }
+    }
   }
 </style>
-
-    </main>
-
-    <footer class="footer"></footer>
+</div>
+</footer>
 <style>
   .footer {
-    background-color: #060a56;
-    padding: 75px 0;
+    padding: 0;
+    background: #060a56;
+    .footer-bottom {
+      background-color: #060a56;
+      padding: 100px 0;
+    }
   }
 </style>
 

@@ -13,6 +13,7 @@ section {
 .hover-item {
   position: relative;
   border-radius: 10px;
+  cursor: pointer;
   &::after {
     content: "";
     position: absolute;
@@ -30,12 +31,14 @@ section {
 .dropdown {
   scale: 1;
   transition: 0.2s ease-in;
+  cursor: pointer;
   &:active {
     scale: 0.9;
     transition: 0.2s ease-in;
   }
 }
 .hover-item:hover {
+  cursor: pointer;
   &::after {
     width: 120%;
     height: 100%;
@@ -46,6 +49,7 @@ section {
 .hover-scale {
   scale: 1;
   transition: 0.3s ease-in;
+  cursor: pointer;
   &:hover {
     scale: 1.1;
     transition: 0.3s ease-in;
@@ -57,4 +61,57 @@ section {
 .font-small {
   font-size: 14px;
   line-height: 14px;
+}
+.footer-hover {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 120%;
+    background: #ffffff8b;
+    border-radius: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.3s ease-in;
+  }
+  &:hover::after {
+    opacity: 1;
+    transition: 0.3s ease-in;
+  }
+}
+//! splide
+.splide {
+  max-width: 1680px;
+  margin: 70px auto;
+  .splide__track {
+    max-width: 1560px;
+    margin: 0 auto;
+  }
+  .splide__arrow--prev {
+    left: -0.5em;
+  }
+  .splide__arrow--next {
+    right: -0.5em;
+  }
+  .slider__item {
+    margin: 0 20px;
+  }
+  .splide__arrow {
+    background: transparent;
+    transition: 0.3s ease-in;
+    scale: 1;
+    z-index: 11;
+    &:hover {
+      transition: 0.3s ease-in;
+      scale: 1.1;
+    }
+    &:active {
+      scale: 0.9;
+      transition: 0.3s ease-in;
+      color: #ca8a04;
+    }
+  }
 }
