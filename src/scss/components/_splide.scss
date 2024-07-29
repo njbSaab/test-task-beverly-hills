@@ -1,0 +1,51 @@
+//! splide
+
+.splide.tour-splide {
+  max-width: 1680px;
+  margin: 70px auto;
+  .splide__track {
+    max-width: 1560px;
+    margin: 0 auto;
+  }
+  .splide__arrow--prev {
+    left: -0.5em;
+  }
+  .splide__arrow--next {
+    right: -0.5em;
+  }
+  .slider__item {
+    margin: 0 20px;
+  }
+  .splide__arrow {
+    background: transparent;
+    transition: 0.3s ease-in;
+    scale: 1;
+    z-index: 11;
+    &:hover {
+      transition: 0.3s ease-in;
+      scale: 1.1;
+    }
+    &:active {
+      scale: 0.9;
+      transition: 0.3s ease-in;
+      color: #ca8a04;
+    }
+  }
+}
+.splide.splide-main {
+  .splide__pagination {
+    left: 5%;
+  }
+  .splide__arrow--prev {
+    visibility: hidden;
+  }
+  .splide__arrow--next {
+    visibility: hidden;
+  }
+  .splide__pagination__page {
+    background-color: #ffffff;
+    &.is-active {
+      background-color: #fbd341;
+    }
+  }
+}

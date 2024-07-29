@@ -1,21 +1,85 @@
 <section class="advantages">
   <div class="container">
     <h2 class="title">НАШИ ПРЕИМУЩЕСТВА</h2>
-    <div class="advantages-wrapper flex">
-      <figure>
-        <img src="../../img/advantages.svg" alt="" />
-      </figure>
-      <p class="advantages-text">
-        Очень долго подбирали разные варианты для того, чтобы отпраздновать свой
-        юбилейный День рождения в путешествии и не могли определиться... Решили
-        обратиться за помощью в турагенство. Гульнара, выслушав все пожелания,
-        предложила отдых в Турции, отель Justiniano Club Park Conti 5* в
-        Окурджалар возле Аланьи. Мы очень благодарны ей за предложенный
-        вариант!!!! Отдых получился отличный! Отель с большой ухоженной
-        территорией, внимательный обслуживающий персонал. Отличный номер с видом
-        на море.
-      </p>
-    </div>
+    <section
+      class="splide advantages-slider"
+      aria-labelledby="carousel-heading"
+    >
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="advateges-item">
+              <div class="advantages-wrapper flex">
+                <figure>
+                  <img src="../../img/advantages.svg" alt="" />
+                </figure>
+                <div class="advantages-text-wrapper">
+                  <p class="advantages-text">
+                    Очень долго подбирали разные варианты для того, чтобы
+                    отпраздновать свой юбилейный День рождения в путешествии и
+                    не могли определиться... Решили обратиться за помощью в
+                    турагенство. Гульнара, выслушав все пожелания, предложила
+                    отдых в Турции, отель Justiniano Club Park Conti 5* в
+                    Окурджалар возле Аланьи. Мы очень благодарны ей за
+                    предложенный вариант!!!! Отдых получился отличный! Отель с
+                    большой ухоженной территорией, внимательный обслуживающий
+                    персонал. Отличный номер с видом на море.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="advateges-item">
+              <div class="advantages-wrapper flex">
+                <figure>
+                  <img src="../../img/advantages.svg" alt="" />
+                </figure>
+                <div class="advantages-text-wrapper">
+                  <p class="advantages-text">
+                    Очень долго подбирали разные варианты для того, чтобы
+                    отпраздновать свой юбилейный День рождения в путешествии и
+                    не могли определиться... Решили обратиться за помощью в
+                    турагенство. Гульнара, выслушав все пожелания, предложила
+                    отдых в Турции, отель Justiniano Club Park Conti 5* в
+                    Окурджалар возле Аланьи. Мы очень благодарны ей за
+                    предложенный вариант!!!! Отдых получился отличный! Отель с
+                    большой ухоженной территорией, внимательный обслуживающий
+                    персонал. Отличный номер с видом на море.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="splide__slide">
+            <div class="advateges-item">
+              <div class="advantages-wrapper flex">
+                <figure>
+                  <img src="../../img/advantages.svg" alt="" />
+                </figure>
+                <div class="advantages-text-wrapper">
+                  <p class="advantages-text">
+                    Очень долго подбирали разные варианты для того, чтобы
+                    отпраздновать свой юбилейный День рождения в путешествии и
+                    не могли определиться... Решили обратиться за помощью в
+                    турагенство. Гульнара, выслушав все пожелания, предложила
+                    отдых в Турции, отель Justiniano Club Park Conti 5* в
+                    Окурджалар возле Аланьи. Мы очень благодарны ей за
+                    предложенный вариант!!!! Отдых получился отличный! Отель с
+                    большой ухоженной территорией, внимательный обслуживающий
+                    персонал. Отличный номер с видом на море.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="splide__progress">
+          <div class="splide__progress__bar"></div>
+        </div>
+      </div>
+    </section>
   </div>
 </section>
 
@@ -42,6 +106,23 @@
       font-weight: bold;
       font-family: "Arial";
       padding-bottom: 30px;
+    }
+    .advantages-text-wrapper {
+      position: relative;
+    }
+    .splide__progress {
+      position: absolute;
+      right: 15px;
+      width: 36%;
+      bottom: 100px;
+      height: 4px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    .splide__progress__bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(75deg, black, transparent);
+      transition: width 0.2s;
     }
   }
 </style>
